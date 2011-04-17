@@ -18,12 +18,14 @@ $(document).ready(function(){
     <p> "{{ c.content}}" -- {{c.name }} on {{c.published_date|date:"F j, Y"}} </p>
 {% endfor %}
 </br>
-{% for p in page_range %}
-    {% if p == page_no %}
-        <b>{{p}}</b>
-    {% else %}
-        <a href="?page={{p}}">{{p}}</a>  
-    {% endif %}
-{% endfor %}
+{% if page_range|length > 1 %}
+    {% for p in page_range %}
+        {% if p == page_no %}
+            <b>{{p}}</b>
+        {% else %}
+            <a href="?page={{p}}">{{p}}</a>  
+        {% endif %}
+    {% endfor %}
+{% endif %}
 
 {% endblock %}
