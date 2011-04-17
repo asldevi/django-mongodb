@@ -26,5 +26,5 @@ def home(req):
 def save(req):
     c = Comment(content=req.POST['content'], name=req.POST['name'])
     c.save()
-    return HttpResponseRedirect(reverse('zesty.comments.views.home'))
+    return HttpResponseRedirect(reverse('django-mongodb.comments.views.home'))
 
