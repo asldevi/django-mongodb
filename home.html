@@ -1,5 +1,5 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="http://dev.jquery.com/view/trunk/plugins/validate/jquery.validate.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.js"></script>
 <script>
 $(document).ready(function(){
     $("#commentForm").validate();
@@ -7,7 +7,7 @@ $(document).ready(function(){
 </script>
 
 {% block content %}
-
+<h4> Please enter your comment below </h4>
 <form name="commentForm" id="commentForm" action="post_comment" method="POST">{% csrf_token %}
 <p>Comment <textarea name="content" cols="40" rows="5" class="required" maxlength="200" ></textarea></p>
 <p>Your Name<input type="text" size=50 name="name" class="required"></input></p>

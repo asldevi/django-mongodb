@@ -5,15 +5,6 @@ from django.conf.urls.defaults import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'zesty.comments.views.home'),
-    url(r'post_comment', 'zesty.comments.views.save')
-    # Examples:
-    # url(r'^$', 'zesty.views.home', name='home'),
-    # url(r'^zesty/', include('zesty.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'django-mongodb.comments.views.home'),
+    url(r'post_comment', 'django-mongodb.comments.views.save')
 )
