@@ -9,6 +9,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+# there is no option of mongodb here, but to keep django happy, keep something dummy
+# as the database engine here. And then do the "real" thing - mongoengine.connect
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -19,6 +22,8 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+from mongoengine import connect
+connect('zestydb')
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -147,9 +152,3 @@ LOGGING = {
     }
 }
 
-AUTHENTICATION_BACKENDS = (
-    'mongoengine.django.auth.MongoEngineBackend',
-)
-
-from mongoengine import connect
-connect('zestydb')

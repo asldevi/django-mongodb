@@ -1,13 +1,15 @@
+"""make deployment easy with fab"""
+
 from fabric.api import local
 import os
 
-#Assumes that the code is cloned from git@github.com:asldevi/django-mongodb.git and you are in the django-mongo dir
+#Assumes that the code is $git clone from git@github.com:asldevi/django-mongodb.git and you are in the django-mongo dir
 
-def install(dir='zesty'):
+def install():
     local('python setup.py develop')
 
 def mongo(dbdir='data'):
-    """locals mongodb server.
+    """runs mongodb server.
         
     assumes that mongo is in the $PATH
     """
@@ -16,7 +18,7 @@ def mongo(dbdir='data'):
     local('mongod --dbpath %s' % dbdir)
 
 def django(bind_addr="0.0.0.0:8000"):
-    """locals django development server
+    """runs django development server
     """
     local('python manage.py syncdb')
     local('python manage.py runserver %s' % bind_addr)

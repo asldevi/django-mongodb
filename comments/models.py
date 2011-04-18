@@ -1,4 +1,4 @@
-from mongoengine import *
+from mongoengine import Document, StringField, DateTimeField
 import datetime
 
 class Comment(Document):
