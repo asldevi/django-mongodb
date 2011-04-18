@@ -2,7 +2,12 @@
 A simple app with Django using MongoDB
 --------------------------------------
 
-MongoDB is fairly easy-to-use nosql database and the python module `mongoengine` makes the life even better to work with `mongodb` from python. So, once django, mongodb and mongoengine are installed, let's see how we can make a simple app that takes a comment, commenter's name, stores them and displays back 4 per page.
+MongoDB is fairly easy-to-use nosql database and the python module `mongoengine` makes the life even better to work with `mongodb` from python.
+
+`MongoDB` binaries are available on the website, but be careful to choose between 32/64 bit versions. When in doubt use `$uname -m`.
+`mongoengine` can be installed via `easy_install`, but on importing that it showed me that `multiprocessing` module was necessary. I had to get `build-essentials` module and upgrade `libc6` on my Ubuntu to get `multiprocessing` installed.
+
+So, once django, mongodb and mongoengine are installed, let's see how we can make a simple app that takes a comment, commenter's name, stores them and displays back 4 per page.
 
 As for any django app, first make a project with
 
